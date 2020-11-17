@@ -1,13 +1,9 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
-
   def index
-    if user_signed_in?
-      @post = Post.where(user_id: current_user.id)
-    else
-      user_session
-    end
+    @post = Post.all
   end
+
+  before_action :authenticate_user!, except: %i[index]
 
   def new
     @post = Post.new
@@ -17,9 +13,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
 
     if @post.save
-      redirect_to posts_path 
+      redirect_to posts_path
     else
-      redirect_to action: "new"
+      # redirect_to action: 'new'
+      render :new
     end
   end
 

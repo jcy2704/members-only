@@ -4,8 +4,26 @@
   <% @post.each do |p| %>
     <li>
       <%= link_to  p.title, posts_path %>
+      <% if user_signed_in? %>
+        <%= p.user.name %>
+      <% end %>
     </li>
   <% end %>
 </ul>
 
 <%= link_to  "New Post", new_post_path %>
+
+<br />
+<br />
+
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  <%= link_to('Edit Account', edit_user_registration_path) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path) %>
+  <%= link_to('Register', new_user_registration_path) %>
+  </li>
+<% end %>
