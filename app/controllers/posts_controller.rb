@@ -1,6 +1,14 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    if user_signed_in?
+      @post = Post.where(user_id: current_user.id)
+    else
+      user_session
+    end
+  end
+
   def new
     @post = Post.new
   end
