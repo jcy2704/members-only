@@ -9,7 +9,12 @@
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
+  "engines": {
+    "yarn": ">=1.22.x",
+    "node": ">=10.13"
+  },
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"
   }
+  
 }
