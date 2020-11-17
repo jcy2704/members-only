@@ -1,10 +1,8 @@
 
-<%= form_with model:@post do |f| %>
+<%= form_for @post do |f| %>
   <%= f.label :title%>
   <%= f.text_field :title %>
   <%= f.label :body%>
   <%= f.text_area :body, size: "60x12" %>
-  <%= f.label :user%>
-  <%= collection_select(:user, :post_id, User.all, :id, :name) %>  
   <%= f.submit "Create" %>
 <% end %>
