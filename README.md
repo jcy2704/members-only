@@ -12,7 +12,7 @@ Basic project for Authentication, cookies, and user sessions. The main page is w
 
 ## Live Preview
 
-[Members-Only](#)
+[Members-Only](https://dry-journey-97198.herokuapp.com/)
 
 ## Getting Started
 
