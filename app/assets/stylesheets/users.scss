@@ -2,3 +2,64 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+  margin: 0 auto;
+
+  .name-label {
+    margin-bottom: 5px;
+  }
+
+  .password-label {
+    @extend .name-label;
+  }
+
+  .email-label {
+    @extend .name-label;
+  }
+
+  .name {
+    margin-bottom: 20px;
+  }
+
+  .password {
+    @extend .name;
+  }
+
+  .email {
+    @extend .name;
+  }
+
+  .update-btn {
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font: inherit;
+    color: black;
+    cursor: pointer;
+    width: 100%
+  }
+}
+
+.cancel-sect {
+  @extend .edit-form;
+}
+.cancel-btn {
+  @extend .update-btn;
+}
+
+.edit-title {
+  text-align: center;
+  margin-top: 0;
+}
+
+i {
+  font-size: 12px;
+}
+
+.minimum {
+  @extend i;
+  margin-bottom: 5px;
+}
