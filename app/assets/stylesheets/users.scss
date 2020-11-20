@@ -63,3 +63,44 @@ i {
   @extend i;
   margin-bottom: 5px;
 }
+
+.sign-up-title {
+  @extend .edit-title;
+}
+
+.new_user {
+  @extend .edit-form;
+
+  .sign-up {
+    @extend .update-btn;
+  }
+
+  .password-login {
+    margin-bottom: 7px;
+  }
+
+  .remember-me {
+    margin-bottom: 10px;
+  }
+}
+
+.login-btn {
+  font: inherit;
+  color: black;
+  text-align: center;
+  padding: 4px;
+  background-color: rgb(20, 152, 240);
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+
+  a {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+  }
+
+  &:hover { background-color: rgb(39, 164, 247); }
+}
