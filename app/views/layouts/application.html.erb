@@ -10,19 +10,20 @@
   </head>
 
   <body>
+    <header class="header">
+      <nav class="nav">
+        <%= link_to  "Posts", root_path %>
+        <% if user_signed_in? %>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+          <%= link_to('Edit Account', edit_user_registration_path) %>
+        <% else %>
+          <%= link_to('Login', new_user_session_path) %>
+          <%= link_to('Register', new_user_registration_path) %>
+        <% end %>
+      </nav>
+    </header >
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    <% if user_signed_in? %>
-      <li>
-        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-        <%= link_to('Edit Account', edit_user_registration_path) %>
-      </li>
-      <% else %>
-      <li>
-        <%= link_to('Login', new_user_session_path) %>
-        <%= link_to('Register', new_user_registration_path) %>
-      </li>
-    <% end %>
   </body>
 </html>
