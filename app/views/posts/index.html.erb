@@ -1,18 +1,21 @@
+
 <h1>All Posts</h1>
+<div class="create-cont">
+  <div class="create-btn">
+    <%= link_to  "New Post", new_post_path %>
+  </div>
+</div>
 
-<ul id="posts">
-  <% @post.each do |p| %>
-    <li>
-      <%= link_to  p.title, posts_path %>
-      <% if user_signed_in? %>
-        <%= p.user.name %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to  "New Post", new_post_path %>
-
-<br />
-<br />
-
+<div>
+  <h2>Posts</h2>
+  <ul id="posts">
+    <% @post.each do |p| %>
+      <li>
+        <%= link_to  p.title, posts_path, class: 'post-link' %>
+        <% if user_signed_in? %>
+          <%= p.user.name %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
